@@ -1,0 +1,17 @@
+.signup-container
+  %h1{ class: 'boards' } Boards
+  %hr.line
+  %h2{ class: 'brackets' }Sign up
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .field
+      = f.label :email, class: 'name1'
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email", class: 'card3'
+    .field
+      = f.label :password, class: 'name2'
+      %br/
+      = f.password_field :password, autocomplete: "new-password", class: 'card4'
+    .actions
+    = f.button :submit, class: "signup-submit" do
+      %span.submit submit
