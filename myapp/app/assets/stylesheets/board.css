@@ -1,0 +1,70 @@
+.all-boards-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.page-tittle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.board-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.board-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.user-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-icon.placeholder {
+  background-color: #ddd;
+}
+
+.board-content .board-tittle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.board-content .board-description {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* 新規作成カード */
+.new-board-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #bbb;
+  border-radius: 12px;
+  height: 150px;
+  font-size: 1.2rem;
+  color: #666;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.new-board-card:hover {
+  background-color: #eee;
+  border-color: #999;
+  color: #333;
+}

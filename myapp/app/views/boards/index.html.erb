@@ -1,0 +1,30 @@
+<div class="all-boards-container">
+  <h1 class="page-tittle">ALL BOARDS</h1>
+
+  <% @boards.each do |board| %>
+    <div class="board-card">
+
+      <div class="board-header">
+        <%# ユーザーのアバターがあれば表示。なければ小さいグレープレースホルダ（透過の丸）を表示 %>
+        <% if board.user.respond_to?(:avatar) && board.user.avatar.attached? %>
+          <%= image_tag board.user.avatar, class: "user-icon", alt: "user avatar" %>
+        <% else %>
+          <div class="user-icon placeholder" aria-hidden="true"></div>
+        <% end %>
+
+        <%# 名前やメールは表示しない（要望どおり） %>
+      </div>
+
+      <div class="board-content">
+        <h2 class="board-tittle"><%= board.tittle %></h2> <%# typo修正: tittle -> tittle %>
+        <p class="board-description"><%= board.description %></p>
+      </div>
+
+    </div>
+  <% end %>
+
+  <!-- 新規作成カード -->
+  <%= link_to new_board_path, class: "new-board-card" do %>
+    + Add new board
+  <% end %>
+</div>
