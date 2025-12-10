@@ -1,0 +1,9 @@
+/* 全体レイアウト */
+.common {
+  position: relative;
+  width: 100%;
+  max-width: 414px; /* ← Figmaの基準幅 */
+  margin: 0 auto;
+  background: #ffffff;
+  padding-top: 150px;
+}

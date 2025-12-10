@@ -1,9 +1,6 @@
-.signup-container
-  %h1{ class: 'boards' } Boards
-  %hr.line
+.container
   %h2{ class: 'brackets' }Sign up
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    = render "devise/shared/error_messages", resource: resource
     .field
       = f.label :email, class: 'name1'
       %br/
