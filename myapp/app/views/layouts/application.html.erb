@@ -15,11 +15,17 @@
     <link rel="apple-touch-icon" href="/icon.png">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <meta name ="viewport" content="width=device-width,initial-scale=1.0">
   </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <body class="common">
+    <header>
+      <h1 class="boards">Boards</h1>
+      <% if user_signed_in? %>
+        <%= image_tag 'User1.png', class: 'header_avatar' %>
+      <% end %>
+      <hr class="line">
+    </header>
     <%= yield %>
   </body>
 </html>
