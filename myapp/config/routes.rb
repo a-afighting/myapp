@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   root to: "boards#index"
   resources :boards
+  resources :tasks
 end
 
 # Rails.application.routes.draw do

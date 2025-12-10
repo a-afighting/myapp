@@ -1,0 +1,32 @@
+<div class="task-new-page">
+  <div class="task-new-container">
+    <!-- タイトル -->
+    <h1 class="task-new-title">New Card</h1>
+
+    <!-- エラー表示 -->
+    <% if @task.errors.any? %>
+      <div class="task-new-errors">
+        <ul>
+          <% @task.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <!-- フォーム本体 -->
+    <%= form_with(model: @task, url: tasks_path, method: :post, local: true) do |f| %>
+      <div class="task-new-field">
+        <label class="task-new-label">Name</label>
+        <%= f.text_field :name, class: 'task-new-input' %>
+      </div>
+
+      <div class="task-new-field">
+        <label class="task-new-label">Description</label>
+        <%= f.text_area :description, class: 'task-new-textarea' %>
+      </div>
+
+      <%= f.submit 'Submit', class: 'task-new-submit' %>
+    <% end %>
+  </div>
+</div>

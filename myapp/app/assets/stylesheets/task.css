@@ -1,0 +1,233 @@
+/* ===============================
+   New Task ページ専用スタイル
+   =============================== */
+
+/* ページ全体（背景側のラッパー） */
+.task-new-page {
+  display: flex;
+  justify-content: center;
+}
+
+/* 中央の白いカード部分 */
+.task-new-container {
+  max-width: 420px;              /* スクショっぽい幅 */
+  width: 100%;
+  padding: 24px 16px 80px;       /* 下はボタン分ゆとり */
+}
+
+/* タイトル New Task */
+.task-new-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 24px 0 32px;
+  text-align: left;
+}
+
+/* エラー表示 */
+.task-new-errors {
+  color: #d9534f;
+  margin-bottom: 16px;
+}
+
+.task-new-errors ul {
+  padding-left: 1.2em;
+}
+
+/* フィールド1つ分（Name / Description） */
+.task-new-field {
+  margin-bottom: 24px;
+}
+
+/* ラベル */
+.task-new-label {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+/* Name の入力欄 */
+.task-new-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #dddddd;
+  background-color: #f5f5f5;
+  font-size: 0.95rem;
+}
+
+/* Description の入力欄 */
+.task-new-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #dddddd;
+  background-color: #f5f5f5;
+  font-size: 0.95rem;
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Submit ボタン */
+.task-new-submit {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-radius: 6px;
+  background-color: #f9b625;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  display: block;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.task-new-submit:hover {
+  opacity: 0.9;
+}
+/* ===================================
+   Tasks index（Brackets）の見た目
+   =================================== */
+
+/* 一覧全体のレイアウト */
+.all-tasks-container {
+  max-width: 420px;        /* New Task と同じくらいの幅 */
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+}
+
+/* ページタイトル「Brackets」 */
+.page-tittle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 24px 0 20px;
+}
+
+/* 1枚のカード */
+.task-card {
+  background-color: #f5f5f7;              /* 薄いグレーのカード */
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* 上部のヘッダー（今はアイコンだけ） */
+.task-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+/* ユーザーアイコン */
+.user-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-icon.placeholder {
+  background-color: #ddd;
+}
+
+/* タイトル + 右上メニューを横並びに */
+.task-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+/* タイトル（太字） */
+.task-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* 説明文（薄いグレーで2行目っぽく） */
+.task-description {
+  font-size: 0.9rem;
+  color: #777;
+  line-height: 1.4;
+  margin-top: 4px;
+}
+
+/* 期限（右下の小さい文字イメージ） */
+.task-due-date {
+  font-size: 0.75rem;
+  color: #aaa;
+  text-align: right;
+  margin-top: 8px;
+}
+
+/* ドロップダウンまわり（編集・削除） */
+.task-detail-actions {
+  margin-left: 8px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  min-width: 140px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1;
+}
+
+.dropdown-content.mini {
+  min-width: 110px;
+}
+
+.dropdown-content a {
+  padding: 8px 12px;
+  display: block;
+  text-decoration: none;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+.dropdown-content a:hover {
+  background-color: #f5f5f5;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* 一番下の「+ Add new card」 */
+.new-task-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #d3d3d3;
+  border-radius: 16px;
+  height: 120px;
+  font-size: 0.95rem;
+  color: #888;
+  text-decoration: none;
+  margin-top: 12px;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.new-task-card:hover {
+  background-color: #f7f7f7;
+  border-color: #b5b5b5;
+  color: #555;
+}
+

@@ -1,0 +1,46 @@
+<div class="all-tasks-container">
+  <h1 class="page-tittle">Brackets</h1>
+
+  <% @tasks.each do |task| %>
+    <div class="task-card">
+
+      <div class="task-header">
+        <%# ユーザーのアバターがあれば表示。なければ小さいグレープレースホルダ（透過の丸）を表示 %>
+        <% if task.user.respond_to?(:avatar) && task.user.avatar.attached? %>
+          <%= image_tag task.user.avatar, class: "user-icon", alt: "user avatar" %>
+        <% else %>
+          <div class="user-icon placeholder" aria-hidden="true"></div>
+        <% end %>
+      </div>
+
+      <div class="task-content">
+        <div class="task-title-wrapper">
+          <h2 class="task-title"><%= task.title %></h2>
+
+          <% if user_signed_in? && task.user == current_user %>
+            <div class="task-detail-actions">
+              <div class="dropdown">
+                <%= image_tag 'Combined Shape.png', class: 'dropbtn' %>
+                <div class="dropdown-content mini">
+                  <%= link_to '編集する', edit_task_path(task) %>
+                  <%= link_to '削除する', task_path(task), method: :delete, data: { confirm: '本当に削除してもよろしいですか？' } %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+        <p class="task-description"><%= task.content %></p>
+        <% if task.due_date.present? %>
+          <p class="task-due-date">期限: <%= task.due_date.strftime("%Y-%m-%d") %></p>
+        <% end %>
+      </div>
+
+    </div>
+  <% end %>
+
+  <!-- 新規作成カード -->
+  <%= link_to new_task_path, class: "new-task-card" do %>
+    + Add new card
+  <% end %>
+</div>
