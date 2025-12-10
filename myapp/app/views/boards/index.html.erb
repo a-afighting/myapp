@@ -16,7 +16,21 @@
       </div>
 
       <div class="board-content">
-        <h2 class="board-tittle"><%= board.tittle %></h2> <%# typo修正: tittle -> tittle %>
+        <div class="board-tittle-wrapper">
+          <h2 class="board-tittle"><%= board.tittle %></h2>
+
+          <% if user_signed_in? && board.user == current_user %>
+            <div class="board-detail-actions">
+              <div class="dropdown">
+                <%= image_tag 'Combined Shape.png', class: 'dropbtn' %>
+                <div class="dropdown-content mini">
+                  <%= link_to '編集する', edit_board_path(board) %>
+                  <%= link_to '削除する', board_path(board), method: :delete, data: { confirm: '本当に削除してもよろしいですか？' } %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
         <p class="board-description"><%= board.description %></p>
       </div>
 

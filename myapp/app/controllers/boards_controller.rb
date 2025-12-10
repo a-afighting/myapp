@@ -20,6 +20,20 @@ class BoardsController < ApplicationController
         end
     end
 
+    def edit
+        @board = Board.find(params[:id])
+    end
+
+    def update
+        @board = Board.find(params[:id])
+        if @board.update(board_params)
+            redirect_to root_path
+        else
+            flash.now[:error] = "更新できませんでした"
+            render :edit
+        end
+    end
+
     private
 
     def board_params
